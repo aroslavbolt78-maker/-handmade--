@@ -1,0 +1,603 @@
+/* ===== БАЗОВІ СТИЛІ ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #faf8f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Весь сайт — колонка на всю висоту */
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 40px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    color: #555;
+}
+
+.top-bar a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+    color: #6f80ac;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 40px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #333;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.logo p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    font-size: 14px;
+    outline: none;
+    width: 250px;
+}
+
+.search button {
+    padding: 10px 20px;
+    border: 1px solid #6f80ac;
+    background-color: #6f80ac;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.search button:hover {
+    background-color: #5a6a94;
+}
+
+/* ===== ОСНОВНИЙ МАКЕТ (Flexbox) ===== */
+.main-container {
+    flex: 1;
+    display: flex;
+    padding: 30px 40px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Бокова навігація */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #444;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #6f80ac;
+    color: #fff;
+}
+
+.menu-social {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    font-size: 13px;
+}
+
+.menu-social p {
+    margin: 0 0 8px;
+    font-weight: bold;
+}
+
+.menu-social a {
+    display: inline-block;
+    padding: 3px 6px;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+/* Основний контент */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Головний банер */
+.hero-section {
+    background-color: #e8ecf1;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.hero-section p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d9b8c4;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #c89aa9;
+    transform: translateY(-2px);
+}
+
+/* Секція з товарами */
+.products-section h2,
+.about-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card .price {
+    margin: 0 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #6f80ac;
+}
+
+.card .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Секція "Про нас" на головній */
+.about-section {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-photos {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-photos img {
+    flex: 1;
+    min-width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Форма підписки */
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #794662;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.subscribe h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.subscribe form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.subscribe input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+.subscribe button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d9b8c4;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.subscribe button:hover {
+    background-color: #c89aa9;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 30px 40px;
+    margin-top: 40px;
+}
+
+.footer-cols {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-col p,
+.footer-col a {
+    display: block;
+    margin: 8px 0;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 13px;
+    color: #888;
+}
+
+/* ===== СТИЛІ ДЛЯ СТОРІНКИ ABOUT (з використанням різних селекторів) ===== */
+
+/* 1. Псевдоклас :root та CSS-змінні (глобальні змінні для сторінки About) */
+:root {
+    --about-accent: #c89aa9;
+    --about-dark: #2c3e50;
+    --about-light-bg: #fff8fa;
+    --about-border: #e0d0d5;
+}
+
+/* 2. Універсальний селектор (*) — скидання відступів для сторінки About */
+.about-page-content * {
+    box-sizing: border-box;
+}
+
+/* 3. Селектор за тегом — стилі для заголовків h1 та h2 на сторінці About */
+.about-page-content h1 {
+    font-size: 36px;
+    color: var(--about-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-page-content h2 {
+    font-size: 24px;
+    color: var(--about-dark);
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--about-accent);
+}
+
+/* 4. Селектор за класом (.about-intro) */
+.about-intro {
+    background-color: var(--about-light-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--about-accent);
+    margin-bottom: 25px;
+    font-size: 17px;
+    font-style: italic;
+    color: #555;
+}
+
+/* 5. Селектор дочірніх та вкладених елементів (.about-page-content p) */
+.about-page-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* 5b. Глибока вкладеність (.about-page-content .highlight-list li) */
+.about-page-content .highlight-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.about-page-content .highlight-list li {
+    padding-left: 35px;
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 16px;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.about-page-content .highlight-list li::before {
+    content: '💎';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* 6. Псевдоклас стану (:hover) — ефект наведення на кнопку */
+.about-page-content .btn:hover {
+    background-color: var(--about-accent);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(200, 154, 169, 0.4);
+}
+
+/* 7. Групування селекторів (через кому) — однакові стилі для двох елементів */
+.about-page-content h1,
+.about-page-content h2 {
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.5px;
+}
+
+/* 8. Комбінація селектора та класу (tag.class) — тільки для <a class="btn"> */
+a.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #d9b8c4;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+a.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Фото майстерні на сторінці About (десктоп) */
+.team-photos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.team-photos img {
+    flex: 1;
+    min-width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-photos img:hover {
+    transform: scale(1.03);
+}
+
+/* ===== АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ ===== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar li {
+        margin-bottom: 0;
+    }
+
+    .sidebar a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-page-content h1 {
+        font-size: 28px;
+    }
+
+    .about-page-content h2 {
+        font-size: 20px;
+    }
+
+    /* Фікс для фото на мобільних */
+    .team-photos {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .team-photos img {
+        flex: none; /* Прибираємо розтягування */
+        min-width: 100%;
+        max-width: 100%;
+        height: 250px; /* Фіксована висота */
+        object-fit: cover;
+    }
+
+    .footer-cols {
+        flex-direction: column;
+    }
+}
